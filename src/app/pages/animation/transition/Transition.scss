@@ -1,0 +1,11 @@
+* {
+    // transition-property: opacity;
+    transition: opacity 6s !important;
+}
+
+#root-transition {
+    button:hover {
+        opacity: 0;
+    }
+}
+
