@@ -2,6 +2,14 @@
 
 npm create vite@latest briefcase --template react
 
+# Add Scss
+
+npm add -D sass
+
+# Add react router dom
+
+npm install react-router-dom
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
