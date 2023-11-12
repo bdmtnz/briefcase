@@ -9,6 +9,13 @@ export interface ILang {
                 Transforms: string
             }
         }
+    },
+    Shared: {
+        Components: {
+            Select: {
+                Choose: string
+            }
+        }
     }
 }
 

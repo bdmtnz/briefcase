@@ -8,5 +8,12 @@ export const esCO: ILang = {
                 Transforms: "Transformaciones"
             }
         }
+    },
+    Shared: {
+        Components: {
+            Select: {
+                Choose: 'Seleccione'
+            }
+        }
     }
 }

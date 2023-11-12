@@ -8,5 +8,12 @@ export const enUS: ILang = {
                 Transforms: "Transforms"
             }
         }
+    },
+    Shared: {
+        Components: {
+            Select: {
+                Choose: 'Choose'
+            }
+        }
     }
 }

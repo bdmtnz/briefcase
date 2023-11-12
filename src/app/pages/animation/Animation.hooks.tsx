@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { ITabsParam } from "../../shared/components/tabs/Tabs.model"
 import { LangContext } from "../../redux/language/lang-context";
 
@@ -23,6 +23,24 @@ export const useAnimation = () => {
             },
         ]
     })
+
+    useEffect(() => {
+        setTabs({
+            defaultTab: 0,
+            tabs: [
+                {
+                    label: language.Pages.Animation.Labels.Transitions,
+                    value: 0,
+                    element: <div>Lol</div>
+                },
+                {
+                    label: language.Pages.Animation.Labels.Transforms,
+                    value: 1,
+                    element: <div>Lol 2</div>
+                },
+            ]
+        })
+    }, [language])
 
     return {
         state: {

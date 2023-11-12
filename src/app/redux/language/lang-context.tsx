@@ -6,13 +6,13 @@ import { esCO } from "../../langs/esCO";
 export interface ILangState {
     languageKey: 'esCO'|'enUS',
     language: ILang,
-    setLanguage: (languageKey:'esCO'|'enUS') => void
+    setLanguage: (languageKey:'esCO'|'enUS'|string) => void
 }
 
 export const initialState: ILangState = {
     languageKey: "esCO",
     language: esCO,
-    setLanguage: (languageKey:'esCO'|'enUS') => {}
+    setLanguage: (languageKey:'esCO'|'enUS'|string) => { console.log(languageKey) }
 }
 
 export const LangContext = React.createContext(initialState)
@@ -25,6 +25,7 @@ export const LangProvider = ({ children }: {children: React.ReactNode}) => {
         language: state.language,
         setLanguage: (langKey:string) => {
             let _language = LANGS[langKey] ?? esCO;
+            console.log(_language)
             dispatch({ type: LangActions.CHANGE_LANGUAGE, languageKey: langKey, language: _language });
         }
     }
