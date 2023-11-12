@@ -1,3 +1,4 @@
+import { Container } from "@mui/material"
 import "./Layout.scss"
 
 interface LayoutParams {
@@ -7,6 +8,10 @@ interface LayoutParams {
 const Layout = ({ children }: LayoutParams) => {
 
     return (
-        <>{children}</>
+        <Container maxWidth="lg" className="root-layout">
+            {children}
+        </Container>
     )
 }
+
+export default Layout
