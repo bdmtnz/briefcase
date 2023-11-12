@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { ITabsParam } from "../../shared/components/tabs/Tabs.model"
 import { LangContext } from "../../redux/language/lang-context";
+import Transition from "./transition/Transition";
 
 
 export const useAnimation = () => {
@@ -14,7 +15,7 @@ export const useAnimation = () => {
             {
                 label: language.Pages.Animation.Labels.Transitions,
                 value: 0,
-                element: <div>Lol</div>
+                element: <Transition/>
             },
             {
                 label: language.Pages.Animation.Labels.Transforms,
@@ -31,7 +32,7 @@ export const useAnimation = () => {
                 {
                     label: language.Pages.Animation.Labels.Transitions,
                     value: 0,
-                    element: <div>Lol</div>
+                    element: <Transition/>
                 },
                 {
                     label: language.Pages.Animation.Labels.Transforms,
