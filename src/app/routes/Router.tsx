@@ -1,8 +1,8 @@
 import {
     createBrowserRouter
 } from "react-router-dom"
-import Transition from "../pages/animation/transition/Transition"
 import Layout from "../shared/layout/Layout"
+import Animation from "../pages/animation/Animation"
 
 const AppRouter = createBrowserRouter([
     {
@@ -10,8 +10,8 @@ const AppRouter = createBrowserRouter([
       element: <div>Hello world!</div>
     },
     {
-        path: "/transition",
-        element: <Layout children={<Transition/>}/>
+        path: "/animations",
+        element: <Layout children={<Animation/>}/>
     }
 ])
 
