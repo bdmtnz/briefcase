@@ -3,16 +3,19 @@ import {
 } from "react-router-dom"
 import Layout from "../shared/layout/Layout"
 import Animation from "../pages/animation/Animation"
+import Dashboard from "../pages/dashboard/Dashboard"
 
 const AppRouter = createBrowserRouter([
     {
-      path: "/",
-      element: <div>Hello world!</div>
-    },
-    {
-        path: "/animations",
-        element: <Layout children={<Animation/>}/>
-    }
+      path: "/dashboard",
+      element: <Dashboard/>,
+      children: [
+        {
+            path: "animations",
+            element: <Layout children={<Animation/>}/>
+        }
+      ]
+    }    
 ])
 
 export default AppRouter

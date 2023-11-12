@@ -1,5 +1,6 @@
 import { Box, Tab, Tabs } from '@mui/material';
 import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
 import './Tabs.scss'
 import { ITabsParam } from './Tabs.model';
@@ -47,7 +48,7 @@ const TabsCustom = ({defaultTab = 0, tabs}:ITabsParam) => {
           {
             tabs.map(tab => {
               return (
-                <Tab label={tab.label} value={tab.value}/>
+                <Tab key={uuid()} label={tab.label} value={tab.value}/>
               )
             })
           }
@@ -55,7 +56,7 @@ const TabsCustom = ({defaultTab = 0, tabs}:ITabsParam) => {
         {
           tabs.map(tab => {
             return (
-              <TabPanel value={value} index={tab.value}>
+              <TabPanel key={uuid()} value={value} index={tab.value}>
                 {tab.element}
               </TabPanel>
             )
