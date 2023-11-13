@@ -14,6 +14,7 @@ import Menu from "@mui/material/Menu";
 import SelectCustom from "../../../../shared/components/select/Select";
 import { useContext } from "react";
 import { LangContext } from "../../../../redux/language/lang-context";
+import { ThemeContext } from "../../../../redux/theme/theme-context";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -57,6 +58,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function NavBar() {
   const { languageKey, setLanguage } = useContext(LangContext);
+  const { theme, themeKey, setTheme } = useContext(ThemeContext)
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -185,13 +188,22 @@ export default function NavBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <SelectCustom
-            label="Prueba"
+            label="Language"
             onChange={(selected) => { setLanguage(`${selected}`) }}
             options={[
               { label: "Español", value: "esCO" },
               { label: "English", value: "enUS" },
             ]}
             value={languageKey}
+          />
+          <SelectCustom
+            label="Theme"
+            onChange={(selected) => { setTheme(`${selected}`) }}
+            options={[
+              { label: "Light", value: "light" },
+              { label: "Dark", value: "dark" },
+            ]}
+            value={themeKey}
           />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
