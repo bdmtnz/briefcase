@@ -8,10 +8,7 @@ export interface ITheme {
         high: string
     },
     btn: {
-        high: {
-            color: string,
-            bg: string
-        }
+        high: string
     }
 }
 

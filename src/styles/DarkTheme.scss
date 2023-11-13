@@ -1,0 +1,20 @@
+.dark {
+    &-bg {
+        &-low {
+            background-color: rgb(70, 70, 70);
+        }
+        &-middle {
+            background-color: rgb(32, 32, 32);
+        }
+        &-high {
+            background-color: rgb(15, 15, 15);
+        }
+    }
+    &-btn {
+        &-high {
+            color: black;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid gray;
+        }
+    }
+}

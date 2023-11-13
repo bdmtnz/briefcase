@@ -7,9 +7,6 @@ export const lightTheme: ITheme = {
         high: "light-bg-high"
     },
     btn: {
-        high: {
-            color: "light-btn-high-color",
-            bg: "light-btn-high-bg"
-        }
+        high: "light-btn-high"
     }
 }

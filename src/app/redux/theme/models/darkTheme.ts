@@ -7,9 +7,6 @@ export const darkTheme: ITheme = {
         high: "dark-bg-high"
     },
     btn: {
-        high: {
-            color: "dark-btn-high-color",
-            bg: "dark-btn-high-bg"
-        }
+        high: "dark-btn-high"
     }
 }
