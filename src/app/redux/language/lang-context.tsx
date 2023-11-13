@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import { LangActions, LangReducer } from "./lang-reducer";
-import { ILang, LANGS } from "../../langs/lang.model";
-import { esCO } from "../../langs/esCO";
+import { ILang, LANGS } from "./models/lang.model";
+import { esCO } from "./models/esCO";
 
 export interface ILangState {
     languageKey: 'esCO'|'enUS',
