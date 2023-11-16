@@ -1,14 +1,14 @@
-import { useContext } from 'react'
 import './Transition.scss'
-import { ThemeContext } from '../../../redux/theme/theme-context'
 
 const Transition = () => {
-    const { theme } = useContext(ThemeContext)
 
     return (
         <div id="root-transition">
-            <button className={theme.btn.high}>
+            <button>
                 Hover me
+            </button>
+            <button className="theme-btn-high">
+                Hover me NEW
             </button>
         </div>
     )

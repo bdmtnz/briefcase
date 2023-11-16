@@ -1,2 +1,34 @@
 @import './DarkTheme.scss';
 @import './LightTheme.scss';
+
+:root {
+    //Default dark mode pallette
+    --wall-bg-low: background-color: rgb(70, 70, 70);
+    --wall-bg-middle: background-color: rgb(32, 32, 32);
+    --wall-bg-high: background-color: rgb(15, 15, 15);
+
+    --btn-bg-high: rgb(255, 255, 255);
+    --btn-color-high: black;
+    --btn-border-high: 1px solid gray;
+}
+
+.theme {
+    &-bg {
+        &-low {
+            background-color: var(--wall-bg-low);
+        }
+        &-middle {
+            background-color: var(--wall-bg-middle);
+        }
+        &-high {
+            background-color: var(--wall-bg-high);
+        }
+    }
+    &-btn {
+        &-high {
+            color: var(--btn-color-high);
+            background-color: var(--btn-bg-high);
+            border: var(--btn-border-high);
+        }
+    }
+}

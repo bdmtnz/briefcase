@@ -12,9 +12,9 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SelectCustom from "../../../../shared/components/select/Select";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LangContext } from "../../../../redux/language/lang-context";
-import { ThemeContext } from "../../../../redux/theme/theme-context";
+import { changeCSSTheme, getCurrentTheme } from "../../../../redux/theme/theme.model";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,9 +58,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function NavBar() {
   const { languageKey, setLanguage } = useContext(LangContext);
-  const { theme, themeKey, setTheme } = useContext(ThemeContext)
 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [themeKey, setThemeKey] = useState<string>(getCurrentTheme().themeKey)
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
 
@@ -83,6 +83,10 @@ export default function NavBar() {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  useEffect(() => {
+    changeCSSTheme(themeKey)
+  }, [themeKey])
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -198,7 +202,9 @@ export default function NavBar() {
           />
           <SelectCustom
             label="Theme"
-            onChange={(selected) => { setTheme(`${selected}`) }}
+            onChange={(selected) => {
+              setThemeKey(`${selected}`)
+            }}
             options={[
               { label: "Light", value: "light" },
               { label: "Dark", value: "dark" },
